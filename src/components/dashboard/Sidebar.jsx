@@ -32,6 +32,11 @@ const Sidebar = () => {
         setCheckedWidgets(
           checkedWidgets.filter((item) => item.categoryId !== categoryId)
         );
+      else {
+        setCheckedWidgets(
+          checkedWidgets.filter((item) => item.id !== widget.id)
+        );
+      }
     } else {
       setCheckedWidgets((prev) => {
         return [
@@ -63,7 +68,7 @@ const Sidebar = () => {
         <div style={{ fontWeight: "bold", fontSize: "16px" }}>
           CNAPP Dashboard
         </div>
-        <button onClick={() => dispatch(toggleSidebar())}>Add Widget +</button>
+        <button onClick={() => dispatch(toggleSidebar())}>category +</button>
       </div>
       <div className={`sidebar ${sidebarVisible ? "active" : ""}`}>
         <div>
